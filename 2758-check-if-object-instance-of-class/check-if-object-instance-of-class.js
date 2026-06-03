@@ -10,15 +10,7 @@ var checkIfInstanceOf = function(obj, classFunction) {
  if(obj===null||obj===undefined){
     return false;
  }
- let currentproto=Object.getPrototypeOf(Object(obj));
- while(currentproto!=null
- ){
-    if(currentproto===classFunction.prototype){
-        return true;
-    }
-    currentproto=Object.getPrototypeOf(currentproto);
- }
- return false;
+ return Object(obj) instanceof classFunction;
 };
 
 /**
