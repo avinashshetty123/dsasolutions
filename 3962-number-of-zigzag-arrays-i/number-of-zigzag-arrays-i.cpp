@@ -3,13 +3,11 @@ public:
     const int MOD = 1e9 + 7;
     int zigZagArrays(int n, int l, int r) {
         int m=r-l+1;
-        vector<int>dp0(m,0);
-        vector<int>dp1(m,0);
+        vector<int>dp0(m,1);
+        vector<int>dp1(m,1);
         vector<int>sum0(m+1,0);
         vector<int>sum1(m+1,0);
-        for(int i=0;i<m;i++){
-            dp0[i]=dp1[i]=1;
-        }
+   
         for(int i=1;i<n;i++){
             for(int j=0;j<m;j++){
                 sum0[j+1]=(sum0[j]+dp0[j])%MOD;
